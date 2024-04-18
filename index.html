@@ -48,8 +48,8 @@
         window.onload = function() {
             document.getElementById('make-select').addEventListener('change', function() {
                 if (this.length && this.value) {
-                    for (let el of $("option[data-model]")) el.style.display = 'none';
-                    for (let el of $("option[data-model='"+ this.value +"']")) el.style.display = 'block';
+                    for (let el of $("option[data-model]")) $(el).hide();
+                    for (let el of $("option[data-model='"+ this.value +"']")) $(el).show();
                     document.getElementById('model-select').value = 'all';
                     document.getElementById('model-select').disabled = false;
                 } else {
