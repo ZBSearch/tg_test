@@ -57,7 +57,7 @@
             document.getElementById('update').addEventListener('click', function() {
                 data = $("#main-form").serializeArray();
                 console.log(data);
-                tg.SendData(data);
+                tg.sendData(data);
                 tg.close()
             }, false)
 
