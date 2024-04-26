@@ -51,16 +51,6 @@
         window.onload = function() {
             $("#timeline-options").hide();
 
-            document.getElementById('update').addEventListener('click', function() {
-                let tg = window.Telegram.WebApp;
-
-                data = $("#main-form").serializeArray();
-                console.log(data);
-
-                tg.sendData(JSON.stringify(data));
-                tg.close()
-            }, false)
-
             document.getElementById('make-select').addEventListener('change', function() {
                 if (this.length && this.value) {
                     document.getElementById('model-select').value = 'all';
@@ -89,6 +79,14 @@
                     $("#timeline-options").hide();
                 }
             }, false);
+
+            document.getElementById('update').addEventListener('click', function() {
+                let tg = window.Telegram.WebApp;
+                tg.ready();
+                data = $("#main-form").serializeArray();
+                tg.sendData(JSON.stringify(data));
+                tg.close()
+        }, false)
         };
     </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
