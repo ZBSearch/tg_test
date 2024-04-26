@@ -10,7 +10,7 @@
     <meta name="HandheldFriendly" content="True"/>
     <meta name="robots" content="noindex,nofollow"/>
     <title>ZBSearch-Cars</title>
-    <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>
         function setThemeClass() {
@@ -57,7 +57,8 @@
             document.getElementById('update').addEventListener('click', function() {
                 data = $("#main-form").serializeArray();
                 console.log(data);
-                tg.SendData(data)
+<!--                tg.SendData(data);-->
+                tg.close()
             }, false)
 
             document.getElementById('make-select').addEventListener('change', function() {
