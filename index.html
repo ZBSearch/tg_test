@@ -81,7 +81,7 @@
             }, false);
 
             document.getElementById('update').addEventListener('click', function() {
-                let tg = window.Telegram.WebApp;
+                let tg = Telegram.WebApp;
                 tg.ready();
                 data = $("#main-form").serializeArray();
                 tg.sendData(JSON.stringify(data));
